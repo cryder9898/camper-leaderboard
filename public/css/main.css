@@ -12,4 +12,7 @@ body {
   padding: 20px;
   color: white; }
 
+table, tr, td {
+  border: 1px solid black; }
+
 /*# sourceMappingURL=main.css.map */
