@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 var Leaderboard = require('./Leaderboard');
-
-function Header (props) {
-  return (
-    <div>
-      Header
-    </div>
-  )
-}
+var Header = require('./Header');
 
 class App extends Component {
   render() {
