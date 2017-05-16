@@ -4,7 +4,15 @@ var api = require('./utils/api');
 
 function CamperTable (props) {
   return (
-    <table>
+    <table className='camper-table'>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th className='button'>Points in the Past 30 Days</th>
+          <th className='button'>All Time Points</th>
+        </tr>
+      </thead>
       <tbody>
         {props.campers.map(function (camper, index) {
           return (

@@ -1,0 +1,21 @@
+.button {
+  color: #e6e6e6;
+  background: #000;
+  border: none;
+  font-size: 16px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 2px 0;
+  margin: 5px auto;
+  cursor: pointer;
+}
+
+.button:hover:enabled {
+  background: linear-gradient(#1a1a1a,#999);
+  color: #fff;
+  text-decoration: none;
+}
+
+.button:active {
+  transform: translate(1px);
+}
