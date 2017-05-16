@@ -9,15 +9,17 @@ function CamperTable (props) {
         <tr>
           <th>#</th>
           <th>Name</th>
-          <th className='button'>Points in the Past 30 Days</th>
-          <th className='button'>All Time Points</th>
+          <th>Points in the Past 30 Days</th>
+          <th>All Time Points</th>
         </tr>
       </thead>
       <tbody>
         {props.campers.map(function (camper, index) {
           return (
             <tr key={camper.username}>
-              <td>#{index + 1}</td>
+              <td>#{index + 1}
+                <img src={camper.img} alt={camper.username} />
+              </td>
               <td>{camper.username}</td>
               <td>{camper.recent}</td>
               <td>{camper.alltime}</td>

@@ -1,12 +1,21 @@
 table {
   margin: 10px auto;
+  background-color: $primary-color-light;
+  @include box-shadow(2px,2px,2px,#000);
 
   td {
-    border: 1px solid black;
+    border: 1px solid $divider-color;
     padding: 5px;
   }
 
   th {
-    border-bottom: 1px solid black;
+    padding: 10px;
+    background-color: $primary-color;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+    @include rounded(100%);
   }
 }
