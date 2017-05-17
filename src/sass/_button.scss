@@ -1,23 +1,26 @@
+
+
 .button {
   color: $primary-text-color;
-  background: $secondary-text-color;
+  background: $accent-color;
   border: none;
-  width: 100px;
+  width: 150px;
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 3px;
   text-align: center;
-  padding: 2px 0;
-  margin: 5px auto;
+  padding: 7px 0;
+  margin: 10px auto;
   cursor: pointer;
+  @include box-shadow(2px,2px,2px,#000)
 }
 
 .button:hover:enabled {
-  background: linear-gradient(#1a1a1a,#999);
+  background: linear-gradient($accent-color,#FFF);
   color: #fff;
   text-decoration: none;
 }
 
 .button:active {
-  transform: translate(1px);
+  @include button-transform(2px,2px);
 }

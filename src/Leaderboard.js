@@ -1,6 +1,7 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 var api = require('./utils/api');
+var SelectedTime = require('./SelectedTime');
 
 function CamperTable (props) {
   return (
@@ -33,22 +34,6 @@ function CamperTable (props) {
 
 CamperTable.propTypes = {
   campers: PropTypes.array.isRequired,
-}
-
-function SelectedTime(props) {
-  return (
-    <div
-      className='button'
-      onClick={props.onSelect.bind(null, props.time)}
-    >
-    {props.time}
-    </div>
-  )
-}
-
-SelectedTime.propTypes = {
-  time: PropTypes.string.isRequired,
-  onSelect: PropTypes.func.isRequired
 }
 
 class Leaderboard extends React.Component {

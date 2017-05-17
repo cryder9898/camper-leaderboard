@@ -15,3 +15,9 @@
   -moz-border-radius: $radius;
   border-radius: $radius;
 }
+
+@mixin button-transform($h, $v){
+    -ms-transform: translate($h, $v); /* IE 9 */
+    -webkit-transform: translate($h, $v); /* Safari */
+    transform: translate($h, $v);
+}
