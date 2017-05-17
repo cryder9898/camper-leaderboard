@@ -14,6 +14,7 @@ table {
   }
 
   img {
+    border-style: solid;
     height: 50px;
     width: 50px;
     @include rounded(100%);

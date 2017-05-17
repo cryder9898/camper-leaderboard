@@ -31,17 +31,53 @@ function CamperTable (props) {
   );
 }
 
+CamperTable.propTypes = {
+  campers: PropTypes.array.isRequired,
+}
+
+function SelectedTime(props) {
+  return (
+    <div
+      className='button'
+      onClick={props.onSelect.bind(null, props.time)}
+    >
+    {props.time}
+    </div>
+  )
+}
+
+SelectedTime.propTypes = {
+  time: PropTypes.string.isRequired,
+  onSelect: PropTypes.func.isRequired
+}
+
 class Leaderboard extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      campers: null
+      campers: null,
+      selectedTime: 'recent'
     }
+
+    this.updateTable = this.updateTable.bind(this);
   }
 
   componentDidMount() {
-    api.fetchRecentTopCampers()
+    this.updateTable(this.state.selectedTime);
+  }
+
+  updateTable(time) {
+    // initialize
+    this.setState(function () {
+      return {
+        campers: null,
+        selectedTime: time === 'alltime' ? time = 'recent' : time = 'alltime'
+      }
+    });
+
+    //AJAX setting table
+    api.fetchTopCampers(time)
       .then(function (response) {
         this.setState(function () {
           return {
@@ -56,15 +92,17 @@ class Leaderboard extends React.Component {
       <div>
           {!this.state.campers
             ? <p>Loading</p>
-            : <CamperTable campers={this.state.campers} />
+            : <div>
+                <SelectedTime
+                  time={this.state.selectedTime}
+                  onSelect={this.updateTable}
+                />
+                <CamperTable campers={this.state.campers} />
+              </div>
           }
       </div>
     )
   }
-}
-
-CamperTable.propTypes = {
-  campers: PropTypes.array.isRequired,
 }
 
 module.exports = Leaderboard;
