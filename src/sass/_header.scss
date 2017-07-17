@@ -1,12 +1,8 @@
-.App {
-  text-align: center;
-}
-
 .App-header {
-  font-size: 70px;
+  font-size: 60px;
   font-family: "Josefin Sans";
   background-color: $primary-color-light;
-  padding: 20px;
+  padding: 10px;
   color: $primary-text-color;
   @include box-shadow(2px,2px,2px,#000);
 }
