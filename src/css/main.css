@@ -56,14 +56,10 @@ table {
     -moz-border-radius: 100%;
     border-radius: 100%; }
 
-.App {
-  text-align: center; }
-
 .App-header {
-  font-size: 70px;
+  font-size: 60px;
   font-family: "Josefin Sans";
   background-color: #C8E6C9;
-  padding: 20px;
   color: #212121;
   -webkit-box-shadow: 2px 2px 2px #000;
   -moz-box-shadow: 2px 2px 2px #000;

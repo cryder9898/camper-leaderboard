@@ -5,7 +5,7 @@ var Header = require('./Header');
 class App extends Component {
   render() {
     return (
-      <div className="container-fluid text-center">
+      <div className="container-fluid">
         <Header />
         <Leaderboard />
       </div>
